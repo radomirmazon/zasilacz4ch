@@ -3,9 +3,9 @@
 
 #include <stdlib.h>
 #include "config.h"
-#include "base_device.h"
-#include "mqtt_module.h"
-#include "timer.h"
+#include "shared/base_device.h"
+#include "shared/mqtt_module.h"
+#include "shared/timer.h"
 
 #define STATE_OFF 0
 #define STATE_PRE_ON_1 1
