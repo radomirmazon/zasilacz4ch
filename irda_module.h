@@ -2,11 +2,11 @@
 #define irda_module_h
 
 #include "config.h"
-#include "base_device.h"
-#include "mqtt_module.h"
+#include "shared/base_device.h"
+#include "shared/mqtt_module.h"
 #include <IRremoteESP8266.h>
 #include <IRsend.h>
-#include "timer.h"
+#include "shared/timer.h"
 
 class IrdaModule  :public BaseDevice {
   private:

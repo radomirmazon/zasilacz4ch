@@ -1,6 +1,6 @@
 #include <ESP8266WiFi.h>
 #include "config.h"
-#include "mqtt_module.h"
+#include "shared/mqtt_module.h"
 #include "output_module.h"
 #include "power_manager.h"
 #include "curtain_module.h"
@@ -12,7 +12,11 @@
 Config config;
 WiFiClient espClient;
 PowerManager powerManager;
-MqttModule* pMqtt = new MqttModule(&espClient, &config);
+MqttModule* pMqtt = new MqttModule(&espClient, 
+    config.mqtt_broker,
+    config.mqtt_port,
+    config.mqtt_username,
+    config.mqtt_password);
 
 CurtainModule curtainModule(PIN_CURTAIN_DOWN, PIN_CURTAIN_UP, pMqtt, &config);
 OutputModule output0(5, config.mgtt_topic_ch0, "led", pMqtt, &config);

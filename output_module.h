@@ -3,8 +3,8 @@
 
 #include <stdlib.h>
 #include "config.h"
-#include "base_device.h"
-#include "mqtt_module.h"
+#include "shared/base_device.h"
+#include "shared/mqtt_module.h"
 
 class OutputModule :public BaseDevice {
   private:
